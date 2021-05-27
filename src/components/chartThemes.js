@@ -2,7 +2,7 @@ const chartTheme = {
   area: {
     style: {
       data: {
-        fill: "black",
+        fill: "ababab",
       },
       labels: {
         fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
@@ -21,7 +21,7 @@ const chartTheme = {
   axis: {
     style: {
       axis: {
-        stroke: "#90A4AE",
+        stroke: "#ababab",
         strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",

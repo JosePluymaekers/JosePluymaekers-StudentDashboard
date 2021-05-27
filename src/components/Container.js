@@ -108,7 +108,10 @@ class Container extends React.Component {
   //  get grades from student by id
   getGradesFromStudent = (id) => {
     const state = { ...this.state };
-    const studentID = parseInt(id);
+    const studentID = state.students.filter((student) => {
+      if (student.firstName === id) return student;
+    })[0].id;
+
     const fromStudent = state.gradings.filter((item) => {
       return item.studentID === studentID;
     });
@@ -126,9 +129,9 @@ class Container extends React.Component {
   //  Get all info from student by id
   getStudentInfo = (id) => {
     const state = [...this.state.students];
-    const studentID = parseInt(id);
+    const studentID = id;
     const student = state.filter((student) => {
-      return student.id === studentID;
+      return student.firstName === studentID;
     });
     return student;
   };
@@ -248,9 +251,7 @@ class Container extends React.Component {
           <Dashboard
             className="filter-div"
             students={this.state.students}
-            handlechange={this.studentSelectHandleChange}
             assignments={this.state.assignments}
-            handlechangeAssignment={this.assignmentSelectHandleChange}
           />
           <Switch>
             <Route

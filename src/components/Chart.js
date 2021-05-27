@@ -92,6 +92,7 @@ function Chart(props) {
             data={graphDataWithLabels}
             x="assignmentName"
             y="enjoymentGrade"
+            style={{ data: { fill: "#4f8ac9" } }}
             tickValues={[1, 2, 3, 4, 5]}
             tickFormat={props.graphData.map((item) => item.assignmentName)}
             labelComponent={<VictoryTooltip />}
